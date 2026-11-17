@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Diseño Web</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+
+<header>
+    <h1>TechNova Solutions</h1>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="carrito.html">Carrito</a>
+        <a href="Quienes.html">Quienes somos</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>Diseño Web Corporativo</h2>
+
+        <img src="imagenes/prod3.jpg"
+             alt="Diseño Web"
+             width="300">
+
+        <p>
+            Creación de página web profesional adaptada a móviles.
+        </p>
+
+        <p>
+            <strong>Precio: 99€</strong>
+        </p>
+
+        <button class="btn" onclick="agregarCarrito()">
+            Añadir al carrito
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+function agregarCarrito() {
+
+    let carrito =
+        JSON.parse(localStorage.getItem("carrito")) || [];
+
+    carrito.push({
+        nombre: "Diseño Web Corporativo",
+        precio: 99
+    });
+
+    localStorage.setItem(
+        "carrito",
+        JSON.stringify(carrito)
+    );
+
+    alert("Producto añadido al carrito");
+
+}
+
+</script>
+
+</body>
+</html>
